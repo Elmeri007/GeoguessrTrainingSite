@@ -1,4 +1,58 @@
 
+p {
+    font-family: 'Rubik';
+    font-size: 14px;
+}
+
+h1 {
+    font-family: 'Rubik';
+}
+
+h2 {
+    font-family: 'Rubik';
+}
+
+h3 {
+    font-family: 'Rubik';
+}
+
+
+label {
+    font-family: 'Rubik';
+}
+
+button {
+    padding: 5px;
+    background-color: rgb(46, 150, 235);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Rubik";
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(115, 124, 247);
+}
+
+img:hover {
+    
+    cursor: pointer;
+}
+
+.correct-answer-img {
+    filter: sepia(1) hue-rotate(90deg) saturate(2);
+}
+
+.wrong-answer-img {
+    filter: sepia(1) hue-rotate(-30deg) saturate(2);
+}
+
+.img-size{
+    width: 400px;
+}
+
 .navbar-float {
     list-style-type: none;
     margin: 0;
@@ -35,6 +89,7 @@ a:not(.active):hover {
 
 .title-padding {
     padding: 20px;
+    font-family: 'Rubik';
 }
 
 .list-style {

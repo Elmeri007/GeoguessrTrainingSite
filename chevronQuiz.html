@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoguessr Training</title>
+    <link rel="icon" type="image" href="Kuvat/geoguessrLogo2.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    
+</head>
+<body>
+    <h1 class="title-padding">Chevron Quiz</h1>
+    <ul class="navbar-float">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="chevronQuiz.html" class="active">Chevron Quiz</a></li>
+        <li><a href="electricityPoles.html">Electricity Poles</a></li>
+    </ul>
+
+    <br>
+<ul class="list-style">
+    <li>
+        <h2>Where can this Chevron be found?</h2>
+        <img src="Kuvat/blackAndWhiteChevron.png" alt="blackAndWhiteChevron">
+        <br>
+        <br>
+        <label for="answer1">Answer here: </label>
+        <input autocomplete="off" id="answer1" type="text">
+        <button id="submit1">Submit</button>
+        <p id="progress" class="progress">Correctly guessed: 0/1</p>
+    </li>
+
+    <li>
+        <h2>Where can this Chevron be found?</h2>
+        <img src="Kuvat/blueAndWhiteChevron.png" alt="blackAndWhiteChevron">
+        <br>
+        <br>
+        <label for="answer2">Answer here: </label>
+        <input autocomplete="off" id="answer1" type="text">
+        <button id="submit2">Submit</button>
+    </li>
+</ul>
+
+<footer>
+    <hr class="footer-space">
+</footer>
+
+<script src="logic.js"></script>
+
+</body>
+</html>

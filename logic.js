@@ -1,29 +1,45 @@
-var answer1 = document.getElementById("answer1")
-var submit1 = document.getElementById("submit1")
+let answer1 = document.getElementById("answer1")
+let submit1 = document.getElementById("submit1")
+let answer2 = document.getElementById("answer2")
+let submit2 = document.getElementById("submit2")
+let guesses = document.getElementById("progress")
+let guesses2 = document.getElementById("progress2")
+let title = document.getElementById("title1")
 
-var correctAnswer1 = ["united kingdom", "great britain", "greece", "italy"];
-var correctAnswer2 = "france";
+let correctAnswer1 = ["united kingdom", "greece", "italy"];
+let correctAnswer2 = ["france"];
+
+let correctGuessesCount = 0;
+let correctGuesses = [];
+
+guesses.textContent = `Correctly guessed: 0 / ${correctAnswer1.length}`
+
+checkAnswer(submit1, answer1, correctAnswer1, correctAnswer1, guesses);
+checkAnswer(submit2, answer2, correctAnswer2, correctAnswer2, guesses2);
 
 
-submit1.addEventListener("click", () => {
-    if (answer1.value.trim().toLowerCase() === correctAnswer1) {
-        answer1.classList.add("correct-answer")
-    }
+function checkAnswer (submitId, inputId, correctAnswer, answerArray, taskId) {
+    submitId.addEventListener("click", () => {
 
-    else if (answer1.value.trim().toLowerCase() != correctAnswer1) {
-        answer1.classList.add("wrong-answer")
-    }
-});
-
-
-
-
-submit2.addEventListener("click", () => {
-    if (answer2.value.trim().toLowerCase() === correctAnswer2) {
-        answer2.classList.add("correct-answer")
-    }
-
-    else if (answer2.value.trim().toLowerCase() != correctAnswer2) {
-        answer2.classList.add("wrong-answer")
-    }
-});
+        let userAnswer = inputId.value.trim().toLowerCase();
+    
+        if (correctAnswer.includes(userAnswer)) {
+            inputId.classList.add("correct-answer")
+            inputId.classList.remove("wrong-answer")
+            
+            if (!correctGuesses.includes(userAnswer)) {
+                correctGuessesCount++;
+                correctGuesses.push(userAnswer)
+                guesses.textContent = `Correctly guessed: ${correctGuessesCount} / ${correctAnswer1.length}`
+                console.log(correctGuessesCount)
+                console.log(correctGuesses) 
+                console.log(correctAnswer1.length)
+            }
+        }
+    
+        else if (inputId.value.trim().toLowerCase() != correctAnswer) {
+            inputId.classList.add("wrong-answer")
+            inputId.classList.remove("right-answer")
+        }
+    });
+}

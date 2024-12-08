@@ -36,21 +36,20 @@ button:hover{
     background-color: rgb(115, 124, 247);
 }
 
-img:hover {
-    
+.img-size{
+    width: 400px;
+}
+
+.electricity-pole-imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
     cursor: pointer;
 }
 
-.correct-answer-img {
-    filter: sepia(1) hue-rotate(90deg) saturate(2);
-}
-
-.wrong-answer-img {
-    filter: sepia(1) hue-rotate(-30deg) saturate(2);
-}
-
-.img-size{
-    width: 400px;
+.electricity-pole-imgs img {
+    width: 200px;
 }
 
 .navbar-float {
@@ -102,6 +101,25 @@ a:not(.active):hover {
 
 .wrong-answer {
     background-color: rgb(231, 150, 150);
+}
+
+.image-container {
+    opacity: 1;
+    transition: opacity 1s ease;
+    cursor: pointer;
+}
+
+.image-container img.answered {
+    /* filter: sepia(1) hue-rotate(90deg) saturate(2); */
+    opacity: 0.5;
+    
+}
+
+.correct-answer-img {
+    filter: sepia(1) hue-rotate(90deg) saturate(2);
+}
+.wrong-answer-img {
+    filter: sepia(1) hue-rotate(-30deg) saturate(2);
 }
 
 .footer-space {

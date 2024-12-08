@@ -10,6 +10,7 @@ let guesses2 = document.getElementById("progress2")
 let guesses3 = document.getElementById("progress3")
 let title = document.getElementById("title1")
 
+
 let correctAnswer1 = ["united kingdom", "greece", "italy"];
 let correctAnswer2 = ["france"];
 let correctAnswer3 = ["sweden", "luxemburg"];
@@ -26,6 +27,7 @@ guesses3.textContent = `Correctly guessed: 0 / ${correctAnswer3.length}`
 checkAnswer(submit1, answer1, correctAnswer1, correctAnswer1, guesses, correctGuessesCount1);
 checkAnswer(submit2, answer2, correctAnswer2, correctAnswer2, guesses2, correctGuessesCount2);
 checkAnswer(submit3, answer3, correctAnswer3, correctAnswer3, guesses3, correctGuessesCount3);
+
 
 function checkAnswer (submitId, inputId, correctAnswer, answerArray, taskId, correctGuessesCount) {
     submitId.addEventListener("click", () => {
@@ -52,6 +54,3 @@ function checkAnswer (submitId, inputId, correctAnswer, answerArray, taskId, cor
     });
 }
 
-function checkAnswerImg {
-    
-}

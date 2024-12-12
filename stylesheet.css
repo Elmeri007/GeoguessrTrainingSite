@@ -131,3 +131,12 @@ a:not(.active):hover {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+#newGame {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#thePole {
+    display: inline;
+}

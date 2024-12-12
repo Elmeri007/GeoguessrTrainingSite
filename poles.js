@@ -9,25 +9,32 @@ let pole8 = document.getElementById("pole8")
 let thePole = document.getElementById("thePole")
 
 let poleCountries = ["Romania", "Poland", "Brasil", "Hungary", "Senegal", "Argentina"];
+let usedCountries = []
 
-let randomInt = Math.floor(Math.random() * poleCountries.length);
-let randomPole = poleCountries[randomInt]
+let randomPole = poleRandomizer();
+if (randomPole) {
+    thePole.textContent = `Which of these poles can be found in ${randomPole}?`;
+} else {
+    thePole.textContent = "Congraz!";
+}
 
+document.getElementById("newGame").addEventListener("click", () => {
+    // Reload the current page
+    location.reload();
+});
 
-thePole.textContent = `Which of these poles can be found in ${randomPole}?`
+function poleRandomizer() {
 
-    
+    let remainingPoles = poleCountries.filter(country => !usedCountries.includes(country));
 
+    if (remainingPoles.length === 0) {
+        
+        return null
+    }
 
-checkAnswerImg(romania)
-checkAnswerImg(poland)
-checkAnswerImg(brasil)
-checkAnswerImg(hungary)
-checkAnswerImg(senegal)
-checkAnswerImg(argentina)
-checkAnswerImg(pole7)
-checkAnswerImg(pole8)
-
+    let randomInt = Math.floor(Math.random() * remainingPoles.length);
+    return remainingPoles[randomInt];
+} 
 function checkAnswerImg(poleNro) {
     poleNro.addEventListener("click", () => {
         console.log(poleNro.id)
@@ -43,9 +50,15 @@ function checkAnswerImg(poleNro) {
                 poleNro.classList.add("answered")
             }, 500);
 
-            randomInt = Math.floor(Math.random() * poleCountries.length);
-            randomPole = poleCountries[randomInt];
-            thePole.textContent = `Which of these poles can be found in ${randomPole}?`
+            usedCountries.push(randomPole)
+          
+            randomPole = poleRandomizer();
+
+                if (randomPole) {
+                    thePole.textContent = `Which of these poles can be found in ${randomPole}?`;
+                } else {
+                    thePole.textContent = "Congratulations! All poles guessed.";
+                }
         }
 
         else if (poleNro.id != randomPole.trim().toLowerCase()) {
@@ -59,3 +72,10 @@ function checkAnswerImg(poleNro) {
 
     });
 }
+
+checkAnswerImg(romania)
+checkAnswerImg(poland)
+checkAnswerImg(brasil)
+checkAnswerImg(hungary)
+checkAnswerImg(senegal)
+checkAnswerImg(argentina)
